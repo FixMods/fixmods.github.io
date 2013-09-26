@@ -1,0 +1,92 @@
+<html>
+	<head>
+		<title>FixFire's Themi Theme Creation Tutorial</title>
+	</head>
+	<body>
+	<center><h1>FixFire's Themi Theme Creation Tutorial</h1></center>
+	<h4>Welcome to the Themi Mod theme making tutorial. I'm FixFire if you didn't know that already.</h4>
+	<h4>This tutorial is going to cover how themes and theme files work, how to use them properly and at last (the fun bit), making a theme.</h4>
+	<h4>The first thing you'll need to know is how a theme file works, to avoid messing anything up.</h4>
+	<h4>Theme files can be found under <font color="#0000FF"><i>dtb/client/Dynamic/FixFire/themes</i></font>, in <font color="#FF0000">FTCT</font> files.</h4>
+	<h4>A common theme file would look something like this:</h4>
+	<center><font color="#DCDCDC">--------------------------------------</font><br />
+		<font color = "#000090">DEFAULT THEME<br />
+		#cm: #c2#txt<br />
+		#cm: #c2#txt<br />
+		#cm: #c2#txt<br />
+		#cm: #c2#txt<br />
+		#c1*#cm#c1 #txt<br />
+		#cm<br />
+		#cm<br />
+		#cm<br />
+		#cm<br /></font>
+	<font color="#DCDCDC">--------------------------------------</font></center>
+	<h4>Each line is a small bit of data used in certain circumstances. These are called CHUNKS or TAG LINES.
+	<h4>There's 10 tag lines in each theme.</h4>
+	<h4>Let's code them to make it easier for ourselves:</h4>
+	<center><font color="#DCDCDC">--------------------------------------</font><br />
+		<font color = "#909090">DEFAULT THEME<br /></font>
+		<b><font color="#900000">#cm: #c2#txt<br /></font></b>
+		<b><font color="#009000">#cm: #c2#txt<br /></font></b>
+		<b><font color="#000090">#cm: #c2#txt<br /></font></b>
+		<b><font color="#909000">#cm: #c2#txt<br /></font></b>
+		<b><font color="#000000">#c1*#cm#c1 #txt<br /></font></b>
+		<i><font color="#900000">#cm<br /></font></i>
+		<i><font color="#009000">#cm<br /></font></i>
+		<i><font color="#000090">#cm<br /></font></i>
+		<i><font color="#909000">#cm<br /></font></i>
+	<font color="#DCDCDC">--------------------------------------</font></center>
+	The <font color="#909090">FIRST</font> line is the name. This appears in the Theme GUI and is generally used to identify your theme.<br />
+	The <b><font color="#900000">SECOND</font></b> line is the GUEST text line.<br />
+	The <b><font color="#009000">THIRD</font></b> line is the MOD text line.<br />
+	The <b><font color="#000090">FOURTH</font></b> line is the ADMIN text line.<br />
+	The <b><font color="#909000">FIFTH</font></b> line is the SUPER text line.<br />
+	The <b><font color="#000000">SIXTH</font></b> line is the /me line. This follows the normal text rules, but it's only used when someone uses /me.<br />
+	The <i><font color="#900000">SEVENTH</font></i> line is the GUEST name line. Name lines affects how scripts receive the name, not just how they appear in chat. The name edits also broadcasts to IRC, unlike the chat tag lines do.<br />
+	The <i><font color="#009000">EIGHTH</font></i> line is the MOD name line.<br />
+	The <i><font color="#000090">NINTH</font></i> line is the ADMIN name line.<br />
+	The <i><font color="#909000">TENTH</font></i> line is the SUPER name line.<br />
+	<h4>The tag lines are made up of TAGS. These tags tell Themi where to put stuff, and how it should look.</h4>
+	<h4>The only line that doesn't abide to tag lines is the <font color="#909090">FIRST</font> one, because it stores the name.</h4>
+	<h4>There are several TAGS we can use.</h4>
+	
+	<h4>The first variant of tags are NAME TAGS, followed by TEXT TAGS and COLOR TAGS.</h4>
+	<h4>These categories will be arranged from most common to least common.</h4>
+	<br /> <br /> <br />
+	<center><h1><font color="#ff0000">NAME TAGS</font></h1></center>
+	<font color="#DCDCDC">--------------------------------------</font></center>
+	<h2>#cm</h2>
+	This is the COLORED NAME tag. COLORED NAMES will be placed wherever this tag is placed.<br />For example, if I was speaking on my own server, #cm would appear like this:<br /><font color="#ff0000"><b>FixFire</b></font><br />However, if I was a mod on someone else's server, #cm would appear like this:<br /><font color="#30f000"><b>FixFire</b></font><br />
+	<font color="#DCDCDC">--------------------------------------</font></center>
+	<h2>#nm</h2>
+	This is the RAW NAME tag. Be careful where you use this, as this is the 100% raw name, meaning this will not inherit any formatting or name tag line changes. <i>[See #dcm]</i><br />
+	<font color="#DCDCDC">--------------------------------------</font></center>
+	<h2>#dcm</h2>
+	This is the DETAGGED COLORED NAME tag. This functions similar to the #nm tag, except it's a detagged colored name, which means it's basically a colored name, but with all the colors taken out. This is useful because unlike #nm, it gets affected by name tag line and formatting edits.<br />
+	<font color="#DCDCDC">--------------------------------------</font></center>
+	<h2>#ucm</h2>
+	This is the UPPERCASE COLORED NAME tag. Exactly what it says on the tin, does the same as #cm but is in uppercase. This isn't going to be used much but I added it in for anyone who wants to be creative.
+	<font color="#DCDCDC">--------------------------------------</font></center>
+	<h2>#lcm</h2>
+	This is the LOWERCASE COLORED NAME tag. Does same as #ucm, except lowercase instead of uppercase.
+	<font color="#DCDCDC">--------------------------------------</font></center>
+	<h2>#udcm</h2>
+	This is the UPPERCASE DETAGGED COLORED NAME tag. Combines the power of #ucm and #dcm into one.
+	<font color="#DCDCDC">--------------------------------------</font></center>
+	<h2>#ldcm</h2>
+	This is the LOWERCASE DETAGGED COLORED NAME tag. Combines the power of #lcm and #dcm into one, just like #udcm except with lowercase.
+	<br /> <br /> <br />
+	<center><h1><font color="#00ff00">TEXT TAGS</font></h1></center>
+	<font color="#DCDCDC">--------------------------------------</font></center>
+	<h2>#txt</h2>
+	This is the normal chatted text, like "I am FixFire". In context of /me, this is the action, such as "goes to the park."
+	<font color="#DCDCDC">--------------------------------------</font></center>
+	<h2>#dxt</h2>
+	This is the detagged chatted text. Use this whenever a color change would make your theme look out of place, as this stops players from using colors.
+	<br /> <br /> <br />
+	<center><h1><font color="#0000ff">COLOR TAGS</font></h1></center>
+	<font color="#DCDCDC">--------------------------------------</font></center><br />
+	This is the final and probably most important bit. There's nothing fancy here for the moment, so I'm going to use this space to tell you how to use color codes properly. When putting colors in your theme, always use the Themi tags. Never put a raw color in, as it won't work.<br />This isn't anything difficult or annoying to do, just make sure you're always using <b>#c0</b> and not <b>/c0</b> or <b>\c0</b>. This abides for all colors.
+	<br /><br /><br /><br /><br /><h4>Eh, that's pretty much all of any importance right now. If you have any ideas, PM me on either the forums or Skype. Don't use IRC for sending requests as I might not see it.<br /><br /><center><font color="#ff0000">-FixFire</font></center>
+	</body>
+</html>
